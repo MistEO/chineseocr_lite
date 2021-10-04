@@ -7,10 +7,12 @@
 #include "OcrLite.h"
 
 OcrLiteCaller::OcrLiteCaller()
-	: m_ocrlite_ptr(std::make_shared<OcrLite>())
+	: m_ocrlite_ptr(std::make_unique<OcrLite>())
 {
 	;
 }
+
+OcrLiteCaller::~OcrLiteCaller() = default;
 
 void OcrLiteCaller::setNumThread(int numOfThread)
 {

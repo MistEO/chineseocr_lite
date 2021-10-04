@@ -16,7 +16,7 @@ class OCRLITE_PORT OcrLiteCaller
 {
 public:
 	OcrLiteCaller();
-	~OcrLiteCaller() = default;
+	~OcrLiteCaller();
 	OcrLiteCaller(const OcrLite&) = delete;
 	OcrLiteCaller(OcrLite&&) = delete;
 
@@ -35,5 +35,5 @@ public:
 	OcrLiteCaller& operator=(const OcrLiteCaller&) = delete;
 	OcrLiteCaller& operator=(OcrLiteCaller&&) = delete;
 private:
-	std::shared_ptr<OcrLite> m_ocrlite_ptr;
+	std::unique_ptr<OcrLite> m_ocrlite_ptr;
 };
